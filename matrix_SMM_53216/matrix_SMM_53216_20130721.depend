@@ -1,0 +1,94 @@
+# depslib dependency file v1.0
+1364065088 source:d:\data\mydoc\arduino\matrix_smm_53216_20130721\datestrings.cpp
+	<avr/pgmspace.h>
+	<string.h>
+	"Time.h"
+
+1364421688 d:\data\mydoc\arduino\matrix_smm_53216_20130721\time.h
+	<inttypes.h>
+	<sys/types.h>
+
+1374373761 source:d:\data\mydoc\arduino\matrix_smm_53216_20130721\dht.cpp
+	"DHT.h"
+
+1374373744 d:\data\mydoc\arduino\matrix_smm_53216_20130721\dht.h
+	"Arduino.h"
+	"WProgram.h"
+
+1371033101 d:\codeblocks\arduino\hardware\arduino\cores\arduino\arduino.h
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<avr/pgmspace.h>
+	<avr/io.h>
+	<avr/interrupt.h>
+	"binary.h"
+	"WCharacter.h"
+	"WString.h"
+	"HardwareSerial.h"
+	"pins_arduino.h"
+
+1362986950 d:\codeblocks\arduino\hardware\arduino\cores\arduino\binary.h
+
+1362986950 d:\codeblocks\arduino\hardware\arduino\cores\arduino\wcharacter.h
+	<ctype.h>
+
+1371033133 d:\codeblocks\arduino\hardware\arduino\cores\arduino\wstring.h
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<avr/pgmspace.h>
+
+1362986950 d:\codeblocks\arduino\hardware\arduino\cores\arduino\hardwareserial.h
+	<inttypes.h>
+	"Stream.h"
+	"USBAPI.h"
+
+1371032829 d:\codeblocks\arduino\hardware\arduino\cores\arduino\stream.h
+	<inttypes.h>
+	"Print.h"
+
+1362986950 d:\codeblocks\arduino\hardware\arduino\cores\arduino\print.h
+	<inttypes.h>
+	<stdio.h>
+	"WString.h"
+	"Printable.h"
+
+1362986950 d:\codeblocks\arduino\hardware\arduino\cores\arduino\printable.h
+	<new.h>
+
+1362986950 d:\codeblocks\arduino\hardware\arduino\cores\arduino\new.h
+	<stdlib.h>
+
+1362986950 d:\codeblocks\arduino\hardware\arduino\cores\arduino\usbapi.h
+
+1362986950 d:\codeblocks\arduino\hardware\arduino\variants\standard\pins_arduino.h
+	<avr/pgmspace.h>
+
+1325204723 source:d:\data\mydoc\arduino\matrix_smm_53216_20130721\mstimer2.cpp
+	<MsTimer2.h>
+
+1324693260 d:\data\mydoc\arduino\matrix_smm_53216_20130721\mstimer2.h
+	<avr/interrupt.h>
+
+1364420980 source:d:\data\mydoc\arduino\matrix_smm_53216_20130721\time.cpp
+	<Arduino.h>
+	<WProgram.h>
+	"Time.h"
+
+1412479950 source:d:\data\mydoc\arduino\matrix_smm_53216_20130721\matrix_smm_53216_20130721.ino
+	<Arduino.h>
+	<MsTimer2.h>
+	<Time.h>
+	<Wire.h>
+	"RTClib.h"
+
+1374566569 source:d:\data\mydoc\arduino\matrix_smm_53216_20130721\rtclib.cpp
+	<Wire.h>
+	"RTClib.h"
+	<avr/pgmspace.h>
+	<Arduino.h>
+	<WProgram.h>
+
+1374566561 d:\data\mydoc\arduino\matrix_smm_53216_20130721\rtclib.h
+
