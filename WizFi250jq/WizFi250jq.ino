@@ -135,10 +135,12 @@ void sendHeader()
   TxData += "<!DOCTYPE HTML>\r\n";
   TxData += "<html>\r\n";
   TxData += "<head>\r\n"\
-   "<link rel='stylesheet' href='http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css'>"\
-   "<script src='http://code.jquery.com/jquery-1.10.2.js'></script>"\
-   "<script src='http://code.jquery.com/ui/1.11.2/jquery-ui.js'></script>"\
-   "<script>"\
+   "<link rel='stylesheet' href='http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css'>";
+  myServer.send(TxData);
+   
+  TxData +=  "<script src='http://code.jquery.com/jquery-1.10.2.js'></script>"\
+   "<script src='http://code.jquery.com/ui/1.11.2/jquery-ui.js'></script>";
+   TxData += "<script>"\
    "   $(function() {"\
    "      $('a')"\
    "         .button()"\
