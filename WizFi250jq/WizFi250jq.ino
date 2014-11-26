@@ -28,7 +28,7 @@ void sendData();
 void setup()
 {
   // Add your initialization code here
-  Serial.begin(19200);
+  Serial.begin(9600);
   Serial.println("\r\nSerial Init");
   
   for(int i=2; i<13; i++)
@@ -43,6 +43,14 @@ void setup()
 void loop()
 {
   //Add your repeated code here
+    /*String buf;
+    for(int j=0;j<3000;j++)
+    {
+      buf += "*";
+      Serial.println(buf);
+      Serial.println(j);
+    }
+    */  
     wizfi250.RcvPacket();
 
     if( myServer.isListen() != true )
@@ -125,7 +133,6 @@ void WizFi250_init()
 void sendHeader()
 {
   String TxData;
-  char temp_value[100] = {0};
 
   TxData = "HTTP/1.1 200 OK\r\n";
   TxData += "Content-Type: text/html\r\n";
@@ -134,23 +141,33 @@ void sendHeader()
   TxData += "\r\n";
   TxData += "<!DOCTYPE HTML>\r\n";
   TxData += "<html>\r\n";
-  TxData += "<head>\r\n"\
-   "<link rel='stylesheet' href='http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css'>";
+  TxData += "<head>\r\n";
   myServer.send(TxData);
-   
-  TxData +=  "<script src='http://code.jquery.com/jquery-1.10.2.js'></script>"\
-   "<script src='http://code.jquery.com/ui/1.11.2/jquery-ui.js'></script>";
-   TxData += "<script>"\
-   "   $(function() {"\
-   "      $('a')"\
-   "         .button()"\
-   "         .click(function( event ) {"\
-   "            event.preventDefault();"\
-   "         });"\
-   "   });"\
-   "</script>"\
-            "</head>\r\n"\
-            " ";
+  TxData = "";  
+
+  TxData += "<link rel='stylesheet' href='http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css'>\r\n";
+  myServer.send(TxData);
+  TxData = "";  
+ 
+  TxData += "<script src='http://code.jquery.com/jquery-1.10.2.js'></script>"\
+   "<script src='http://code.jquery.com/ui/1.11.2/jquery-ui.js'></script>\r\n";
+  myServer.send(TxData);
+  TxData = "";  
+
+  TxData += "<script>\r\n";
+  TxData += "   $(function() {\r\n";
+  TxData += "      $('a')\r\n";
+  TxData += "         .button()\r\n";
+  TxData += "         .click(function( event ) {\r\n";
+  TxData += "            event.preventDefault();\r\n";
+  TxData += "         });\r\n";
+  TxData += "   });\r\n";
+  myServer.send(TxData);
+  TxData = "";  
+
+  TxData += "</script>\r\n";
+  TxData +=          "</head>\r\n\r\n";
+  TxData +=          " \r\n";
   myServer.send(TxData);
 }
 
@@ -176,7 +193,9 @@ void sendData()
     //sprintf( temp_value, "digitalPin%d<br />\r\n",digitalPin);
     TxData += temp_value;
   }
-  
+  myServer.send(TxData);
+  TxData = "";
+
   TxData += "</body>\r\n";
   TxData += "</html>\r\n";
   TxData += "\r\n";

@@ -1,20 +1,21 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-   <link rel='stylesheet' href='http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css'>
-   <script src='http://code.jquery.com/jquery-1.10.2.js'></script>
-   <script src='http://code.jquery.com/ui/1.11.2/jquery-ui.js'></script>
-   <script>
-      $(function() {
-         $('a')
-            .button()
-            .click(function( event ) {
-               event.preventDefault();
-            });
-      });
-   </script>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>            
-   <a href="#">LED</a><br/>
+	<a href="#" class="ui-btn">LED</a><br/>
+	<form action="./jq.html" method="get">
+		<div class="ui-field-contain">
+			<label for="flip-6">LED</label>
+			<select name="d8" id="led8" data-role="flipswitch">
+				<option >Off</option>
+				<option selected=''>On</option>
+			</select>
+		</div>
+		<input type='submit'>
+	</form>
 </body>
 </html/>
