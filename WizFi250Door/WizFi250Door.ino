@@ -104,9 +104,9 @@ void sendData(int val)
   String TxData;
 
   if (val == HIGH)
-    TxData = "GET /pushingbox?devid=vE7A28DD84159263 HTTP/1.1\r\nHost: api.pushingbox.com\r\nUser-Agent: Arduino\r\n\r\n\r\n";
+    TxData = "GET /pushingbox?devid=[문열림ID] HTTP/1.1\r\nHost: api.pushingbox.com\r\nUser-Agent: Arduino\r\n\r\n\r\n";
   else
-    TxData = "GET /pushingbox?devid=vF09DFAF82978703 HTTP/1.1\r\nHost: api.pushingbox.com\r\nUser-Agent: Arduino\r\n\r\n\r\n";
+    TxData = "GET /pushingbox?devid=[문닫힘ID] HTTP/1.1\r\nHost: api.pushingbox.com\r\nUser-Agent: Arduino\r\n\r\n\r\n";
   
   Serial.print(TxData);
   myClient.send(TxData);

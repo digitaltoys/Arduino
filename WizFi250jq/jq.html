@@ -6,16 +6,22 @@
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>            
-	<a href="#" class="ui-btn">LED</a><br/>
-	<form action="./jq.html" method="get">
+	<form id='swform' action="./jq.html" method="get">
 		<div class="ui-field-contain">
 			<label for="flip-6">LED</label>
-			<select name="d8" id="led8" data-role="flipswitch">
-				<option >Off</option>
-				<option selected=''>On</option>
-			</select>
+			<input class='sw' type="checkbox" data-role="flipswitch" name="d8" id="led8">
 		</div>
-		<input type='submit'>
+		<input class='ui-hidden-accessible' type='submit'>
 	</form>
+	<script>
+	$(document).ready(fuction () {
+		$( ".sw" )
+		  .change(function () {
+			//alert("change");
+			$( "#swform" ).submit()
+		  })
+		  .change();
+	})
+	</script>
 </body>
 </html/>
