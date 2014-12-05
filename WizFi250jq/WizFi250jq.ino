@@ -143,35 +143,34 @@ void sendHeader()
   TxData += "<html>\r\n";
   TxData += "<head>\r\n";
   myServer.send(TxData);
-  TxData = "";
 
-  //TxData = 
-  char html[256] =
+  TxData = 
   "<link rel='stylesheet' href='http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css'>"\
   "<script src='http://code.jquery.com/jquery-1.10.2.js'></script>"\
   "<script src='http://code.jquery.com/ui/1.11.2/jquery-ui.js'></script>\r\n"\
-//  "\r\n";
-//  myServer.send(TxData);
+  "";
+  myServer.send(TxData);
 
-//  TxData = 
-  "<script>"\
-      "$(function() {"\
-         "$('a')"\
-            ".button()"\
-            ".click(function( event ) {"\
-               "event.preventDefault();"\
-            "});"\
-      "});"\
-   "</script>"\
-            "</head>\r\n"\
-            " ";
-  myServer.send(html);
-//  myServer.send(TxData);
+  TxData = 
+//  "<script>"\
+//      "$(function() {"\
+//         "$('a')"\
+//            ".button()"\
+//            ".click(function( event ) {"\
+//               "event.preventDefault();"\
+//            "});"\
+//      "});"\
+//   "</script>"\
+
+   "</head>\r\n"\
+   "";
+
+   myServer.send(TxData);
 }
 
 void sendData()
 {
-  String TxData, buf;
+  String TxData;
   char temp_value[100] = {0};
   TxData += "<body>\r\n";
 /*
@@ -186,12 +185,17 @@ void sendData()
   {
     int val = digitalRead(dPin);
     sprintf( temp_value, 
-      "<h1>D%d is %d <br/><a href='/?d%d=%d'>LED%d is %s</a><br /></h1>\r\n",
-      dPin, D8val, dPin, 1-D8val, dPin, (D8val)? "On":"Off");
-    //sprintf( temp_value, "digitalPin%d<br />\r\n",digitalPin);
-    TxData += temp_value;
+      "<div><h1>LED%d </h1><a class='ui-button' href='/?d%d=%d'><button>%s</button></a></div>\r\n",
+      dPin, dPin, 1-D8val, (D8val)? "On":"Off");
+    TxData = temp_value;
+    myServer.send(TxData);
+      
+    sprintf( temp_value, 
+      "<form> <input class='sw' type='checkbox' data-role='flipswitch' name='d8' id='led8' %s></form>\r\n",
+      D8val?"checked=''":"");
+    TxData = temp_value;
+    myServer.send(TxData);
   }
-  myServer.send(TxData);
   TxData = "";
 
   TxData += "</body>\r\n";
