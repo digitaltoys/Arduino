@@ -8,7 +8,7 @@
 #define SSID			"Tomato24"
 #define KEY			""
 #define AUTH			"OPEN"
-#define LOCAL_PORT		8080
+#define LOCAL_PORT		11001
 
 boolean 	Wifi_setup = false;
 boolean 	currentLineIsBlank = false;
